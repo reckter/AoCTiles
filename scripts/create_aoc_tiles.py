@@ -38,12 +38,14 @@ DAY_PATTERN = r"main/days/Day\d+.kt"
 # This results in the parent directory of the script directory, the year directories should be here
 AOC_DIR = Path(__file__).absolute().parent.parent.parent
 
+THIS_DIR = Path(__file__).absolute().parent.parent
+
 # The directory where the image files for the tiles are stored. This should be committed to git.
 # Year directories are created in this directory, then each day is saved as 01.png, 02.png, etc.
-IMAGE_DIR = AOC_DIR / "AocTiles" / "Media"
+IMAGE_DIR = THIS_DIR / "Media"
 
 # Path to the README file where the tiles should be added
-README_PATH = AOC_DIR / "AoCTiles" / "README.md"
+README_PATH = THIS_DIR / "README.md"
 
 # Path to the README file where the tiles should be added
 SESSION_COOKIE_PATH = "session.cookie"
@@ -280,7 +282,7 @@ def handle_day(day: int, year: int, day_path: Path | None, html: HTML, day_score
         if day == 25:
             languages = []
     day_graphic_path = generate_day_tile_image(f"{day:02}", f"{year:04}", languages, day_scores)
-    day_graphic_path = day_graphic_path.relative_to(AOC_DIR)
+    day_graphic_path = day_graphic_path.relative_to(THIS_DIR)
     with html.tag("a", href=str(f"https://github.com/reckter/aoc{year}/blob/main/main/days/Day{day}.kt")):
         html.tag("img", closing=False, src=str(day_graphic_path), width=TILE_WIDTH_PX)
 
