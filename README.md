@@ -1,6 +1,6 @@
 <!-- AOC TILES BEGIN -->
 <h1 align="center">
-  2022 - 2 ⭐
+  2022 - 16 ⭐
 </h1>
 <a href="https://github.com/reckter/aoc2022/blob/main/main/days/Day1.kt">
   <img src="Media/2022/01.png" width="161px">
